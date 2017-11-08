@@ -61,7 +61,7 @@ USER root
 RUN chmod +xr /u01/oracle/${apppkg}
 
 RUN mkdir -p /AP/herramientas/logs/internet/cajeros && \
-    chown -R oracle:oracle /AP 
+    chown -R oracle:oracle /AP
 
 USER oracle
 

@@ -32,7 +32,7 @@ podTemplate(
 
         stage ('PRD - Promote image'){
             echo 'Deploying to production'
-            promoteImage('atommovil-qa', 'atmmovil', 'atmmovil', env.BUILD_NUMBER)
+            promoteImage('atmmovil-qa', 'atmmovil', 'atmmovil', env.BUILD_NUMBER)
         }
 
         stage ('PRD - Canary Deploy'){
