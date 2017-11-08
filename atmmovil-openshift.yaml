@@ -6,25 +6,24 @@ items:
   apiVersion: v1
   metadata:
     labels:
-      app: rhel7-weblogic-atmmovilapp
-    name: rhel7-weblogic-atmmovilapp
+      app: atmmovil
+    name: atmmovil
   spec: {}
 
 - kind: BuildConfig
   apiVersion: v1
   metadata:
     labels:
-      app: rhel7-weblogic-atmmovilapp
-    name: rhel7-weblogic-atmmovilapp
+      app: atmmovil
+    name: atmmovil
   spec:
     output:
       to:
         kind: ImageStreamTag
-        name: rhel7-weblogic-atmmovilapp:latest
+        name: atmmovil:latest
     source:
       git:
-        uri: https://github.com/mikeintoch/weblogic-openshift.git
-      contextDir: rhel7-weblogic-sampleapp
+        uri: https://github.com/mikeintoch/atmmovil-openshift.git
       type: Git
     strategy:
       dockerStrategy:
@@ -64,13 +63,13 @@ items:
   apiVersion: v1
   metadata:
     labels:
-      app: rhel7-weblogic-atmmovilapp
-    name: rhel7-weblogic-atmmovilapp
+      app: atmmovil
+    name: atmmovil
   spec:
     replicas: 1
     selector:
-      app: rhel7-weblogic-atmmovilapp
-      deploymentconfig: rhel7-weblogic-atmmovilapp
+      app: atmmovil
+      deploymentconfig: atmmovil
     strategy:
       resources: {}
     template:
@@ -78,12 +77,12 @@ items:
         annotations:
           openshift.io/container.rhel7-weblogic-atmmovilapp.image.entrypoint: '["startWebLogic.sh"]'
         labels:
-          app: rhel7-weblogic-atmmovilapp
-          deploymentconfig: rhel7-weblogic-atmmovilapp
+          app: atmmovil
+          deploymentconfig: atmmovil
       spec:
         containers:
-        - image: rhel7-weblogic-atmmovilapp:latest
-          name: rhel7-weblogic-atmmovilapp
+        - image: atmmovil:latest
+          name: atmmovil
           ports:
           - containerPort: 8001
             protocol: TCP
@@ -92,18 +91,18 @@ items:
     - imageChangeParams:
         automatic: true
         containerNames:
-        - rhel7-weblogic-atmmovilapp
+        - atmmovil
         from:
           kind: ImageStreamTag
-          name: rhel7-weblogic-atmmovilapp:latest
+          name: atmmovil:latest
       type: ImageChange
 
 - kind: Service
   apiVersion: v1
   metadata:
     labels:
-      app: rhel7-weblogic-atmmovilapp
-    name: rhel7-weblogic-atmmovilapp
+      app: atmmovil
+    name: atmmovil
   spec:
     ports:
     - name: 8001-tcp
@@ -111,5 +110,5 @@ items:
       protocol: TCP
       targetPort: 8001
     selector:
-      app: rhel7-weblogic-atmmovilapp
-      deploymentconfig: rhel7-weblogic-atmmovilapp
+      app: atmmovil
+      deploymentconfig: atmmovil
