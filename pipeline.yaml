@@ -5,7 +5,7 @@ spec:
   source:
     git:
       ref: master
-      uri: 'https://github.com/mikeintoch/atmmovil-openshift.git'
+      uri: 'https://github.com/mikeintoch/atmmovil-openshift'
     type: Git
   strategy:
     jenkinsPipelineStrategy:
