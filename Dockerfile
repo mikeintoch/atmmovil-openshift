@@ -19,8 +19,8 @@
 #
 #
 #FROM rhel7-weblogic-domain
-FROM 172.30.1.1:5000/openshift/rhel7-weblogic-domain
-MAINTAINER Johnathan Kupferer <jkupfere@redhat.com>
+FROM mikeintoch/rhel7-weblogic-domain
+MAINTAINER Miguel Delgadillo <mdelgadi@redhat.com>
 
 # Define variables with default values
 #ENV APP_NAME=${APP_NAME:-sample} \
