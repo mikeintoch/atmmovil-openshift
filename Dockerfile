@@ -18,7 +18,8 @@
 # APP_PKG_LOCATION - default: /u01/oracle
 #
 #
-FROM rhel7-weblogic-domain
+#FROM rhel7-weblogic-domain
+FROM 172.30.1.1:5000/openshift/rhel7-weblogic-domain
 MAINTAINER Johnathan Kupferer <jkupfere@redhat.com>
 
 # Define variables with default values
