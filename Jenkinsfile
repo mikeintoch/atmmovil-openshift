@@ -17,13 +17,13 @@ podTemplate(
 
         stage ('DEV - Image build'){
             echo 'Building docker image and deploying to Dev'
-            buildApp('atmmovil-dev', "atmmovil")
+            buildApp('atmmovil-dev', "atmmovil", '8001')
             echo "This is the build number: ${env.BUILD_NUMBER}"
         }
 
         stage ('QA - Promote image'){
             echo 'Deploying to QA'
-            promoteImage('atmmovil-dev', 'atmmovil-qa', 'atmmovil', '8081','latest')
+            promoteImage('atmmovil-dev', 'atmmovil-qa', 'atmmovil', '8001','latest')
         }
 
         stage ('Wait for approval'){
@@ -32,7 +32,7 @@ podTemplate(
 
         stage ('PRD - Promote image'){
             echo 'Deploying to production'
-            promoteImage('atmmovil-qa', 'atmmovil', 'atmmovil', '8081' ,env.BUILD_NUMBER)
+            promoteImage('atmmovil-qa', 'atmmovil', 'atmmovil', '8001' ,env.BUILD_NUMBER)
         }
 
         stage ('PRD - Canary Deploy'){
