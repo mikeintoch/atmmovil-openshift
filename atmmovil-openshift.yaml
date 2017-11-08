@@ -54,7 +54,3 @@ items:
           kind: DockerImage
           name: mikeintoch/rhel7-weblogic-domain:latest
       type: Docker
-    triggers:
-    - type: ConfigChange
-    - imageChange: {}
-      type: ImageChange
