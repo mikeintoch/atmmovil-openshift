@@ -23,7 +23,7 @@ podTemplate(
 
         stage ('QA - Promote image'){
             echo 'Deploying to QA'
-            promoteImage('atmmovil-dev', 'atmmovil-qa', 'atmmovil', 'latest')
+            promoteImage('atmmovil-dev', 'atmmovil-qa', 'atmmovil', '8081','latest')
         }
 
         stage ('Wait for approval'){
@@ -32,7 +32,7 @@ podTemplate(
 
         stage ('PRD - Promote image'){
             echo 'Deploying to production'
-            promoteImage('atmmovil-qa', 'atmmovil', 'atmmovil', env.BUILD_NUMBER)
+            promoteImage('atmmovil-qa', 'atmmovil', 'atmmovil', '8081' ,env.BUILD_NUMBER)
         }
 
         stage ('PRD - Canary Deploy'){
