@@ -75,7 +75,7 @@ items:
     template:
       metadata:
         annotations:
-          openshift.io/container.rhel7-weblogic-atmmovilapp.image.entrypoint: '["startWebLogic.sh"]'
+          openshift.io/container.atmmovil.image.entrypoint: '["startWebLogic.sh"]'
         labels:
           app: atmmovil
           deploymentconfig: atmmovil
