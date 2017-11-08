@@ -54,7 +54,7 @@ ENV DOMAIN_NAME="${DOMAIN_NAME:-base_domain}" \
 # Copy files and deploy application in WLST Offline mode
 # ADD http://192.168.42.1/atm_movil-webclient-1.0-SNAPSHOT.war /u01/oracle/
 
-ADD http://192.168.42.1/${apppkg} /u01/oracle/
+ADD ${app_uri} /u01/oracle/
 COPY container-scripts/* /u01/oracle/
 
 USER root
