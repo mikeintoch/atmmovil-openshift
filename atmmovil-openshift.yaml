@@ -52,7 +52,7 @@ items:
           value: SQL ISVALID
         from:
           kind: DockerImage
-          name: rhel7-weblogic-domain:latest
+          name: mikeintoch/rhel7-weblogic-domain:latest
       type: Docker
     triggers:
     - type: ConfigChange
