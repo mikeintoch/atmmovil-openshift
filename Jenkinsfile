@@ -8,7 +8,7 @@ podTemplate(
 
     node("myJenkins") {
 
-        @Library('github.com/mikeintoch/jenkins-library@master')
+        @Library('github.com/mikeintoch/jenkins-library@master') _
 
         stage ('SCM checkout'){
             echo 'Checking out git repository'
