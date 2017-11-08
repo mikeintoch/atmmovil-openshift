@@ -50,7 +50,7 @@ items:
           value: redhat
         - name: dsTestQuery
           value: SQL ISVALID
-        - name: app_uri
+        - name: repo_uri
           value: http://nexus.cicd.svc.cluster.local:8081/repository/banorte
         from:
           kind: DockerImage
