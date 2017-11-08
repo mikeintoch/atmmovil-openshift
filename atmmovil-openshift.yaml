@@ -51,7 +51,7 @@ items:
         - name: dsTestQuery
           value: SQL ISVALID
         from:
-          kind: ImageStreamTag
+          kind: DockerImage
           name: rhel7-weblogic-domain:latest
       type: Docker
     triggers:
