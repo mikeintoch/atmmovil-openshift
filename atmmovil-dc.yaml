@@ -1,0 +1,56 @@
+kind: List
+apiVersion: v1
+items:
+- kind: DeploymentConfig
+  apiVersion: v1
+  metadata:
+    labels:
+      app: atmmovil
+    name: atmmovil
+  spec:
+    replicas: 1
+    selector:
+      app: atmmovil
+      deploymentconfig: atmmovil
+    strategy:
+      resources: {}
+    template:
+      metadata:
+        annotations:
+          openshift.io/container.atmmovil.image.entrypoint: '["startWebLogic.sh"]'
+        labels:
+          app: atmmovil
+          deploymentconfig: atmmovil
+      spec:
+        containers:
+        - image: atmmovil:latest
+          name: atmmovil
+          ports:
+          - containerPort: 8001
+            protocol: TCP
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - atmmovil
+        from:
+          kind: ImageStreamTag
+          name: atmmovil:latest
+      type: ImageChange
+
+- kind: Service
+  apiVersion: v1
+  metadata:
+    labels:
+      app: atmmovil
+    name: atmmovil
+  spec:
+    ports:
+    - name: 8001-tcp
+      port: 8001
+      protocol: TCP
+      targetPort: 8001
+    selector:
+      app: atmmovil
+      deploymentconfig: atmmovil
