@@ -43,7 +43,7 @@ items:
         - name: dsDriverName
           value: oracle.jdbc.OracleDriver
         - name: dsURL
-          value: jdbc:oracle:thin:@//192.168.42.1:1521/xe
+          value: jdbc:oracle:thin:@//192.168.0.21:1521/xe
         - name: dsUserName
           value: UGATMMOVILADMIN
         - name: dsPassword
