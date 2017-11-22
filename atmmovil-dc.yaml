@@ -54,8 +54,7 @@ items:
     selector:
       app: atmmovil
       deploymentconfig: atmmovil
-
-
+      
 - kind: Route
   apiVersion: v1    
   metadata:
@@ -70,4 +69,4 @@ items:
       kind: Service
       name: atmmovil
       weight: 100
-        wildcardPolicy: None
+      wildcardPolicy: None
