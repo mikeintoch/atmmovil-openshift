@@ -43,7 +43,7 @@ items:
         - name: dsDriverName
           value: oracle.jdbc.OracleDriver
         - name: dsURL
-          value: jdbc:oracle:thin:@//192.168.0.21:1521/xe
+          value: jdbc:oracle:thin:@//35.196.70.114:1521/xe
         - name: dsUserName
           value: UGATMMOVILADMIN
         - name: dsPassword
@@ -51,7 +51,7 @@ items:
         - name: dsTestQuery
           value: SQL ISVALID
         - name: repo_uri
-          value: http://nexus.cicd.svc.cluster.local:8081/repository/banorte
+          value: http://nexus-cicd.192.168.42.159.nip.io/repository/banorte
         from:
           kind: DockerImage
           name: mikeintoch/rhel7-weblogic-domain:latest
