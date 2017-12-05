@@ -63,6 +63,7 @@ items:
       app: atmmovil    
   spec:
     host: atmmovil.apps.mikeintoch.systems
+    path: /atm_movil
     port:
       targetPort: 8001-tcp
     to:
